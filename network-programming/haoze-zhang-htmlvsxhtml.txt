@@ -1,0 +1,20 @@
+Haoze Zhang
+12-10-2016
+
+- What is the main problem with web pages build with HTML?
+Since HTML has loose syntactical requirements, the author may use their own
+syntactic preference which results in inconsistancy of syntax and stucture in
+HTML documents.
+
+- What is the advantage of XHTML?
+XHTML has strict syntactic rules that impose a consistant stucture on all XHTML 
+documents.
+
+- Why did neither of these two standards established itself as the one and only 
+page description method?
+Firstly they are all active in the market and used widely by web document 
+authors. Furthermore, they hold their own advantages.
+
+- Describe the approach of using both simultaneously.
+Compromise between the two. Adopt HTML5's new exciting features and follow 
+strict syntax rules as is specified in XHTML.
