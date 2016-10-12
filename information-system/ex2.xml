@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Information system EX2
+	Author: Haoze Zhang
+	Date: 12-10-2016
+	License: MIT
+-->
+
+<pre:Course xmlns:pre="https://fh-luebeck.de/course" type="compusary">
+	<!-- Course information of "information system" -->
+	<title>Information System</title>
+	<lecturer gender="male" title="Prof. Dr.">
+		<firstName>M</firstName>
+		<lastName>Herren</lastName>
+	</lecturer>
+	<semester>2016 fall</semester>
+	<location>1-1.11</location>
+	<time>12-10-2016</time>
+	<applicantNumber>33</applicantNumber>
+	<applicant>
+		<firstName>A</firstName>
+		<lastName>Zhang</lastName>
+	</applicant>
+	<applicant>
+		<firstName>B</firstName>
+		<lastName>Wang</lastName>
+	</applicant>
+	<applicant>
+		<firstName>C</firstName>
+		<lastName>Li</lastName>
+	</applicant>
+</pre:Course>

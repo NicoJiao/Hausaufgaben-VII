@@ -1,0 +1,20 @@
+GET / HTTP/1.1 # HTTP request method: Get; HTTP version 1.1
+Host: www.google.de # Target host name 
+Accept-Encoding: gzip, deflate, sdch, br # List of acceptable encodings for compression purpose
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4,de;q=0.2 # List of acceptable human languages for response
+Cookie: SID=vANSc9bKh7bzuVtdvEk5OhxN1g-3qwAs5k-tvzCaNM0GRr5Ju1pR_etccWVHfuK7F82PBA.; HSID=Ar_JuAbPZ0vVtnLAE; SSID=A5wH7yDm5_4gyEA7U; APISID=4soohEhXaT-G73Mp/AJEe_SFboL3HuY66s; SAPISID=iPoauTfN_w4P2kDe/A_DjO084RwKCln25X; NID=88=GuO6SJjkYlRnuffwgPG1UKeUn1gpURdwK4X_a7l0PBZ6ce9A2L3w2ba0cw3mDiUPHD2ChVDMECa85Xo2kQQs88UhbBkGy6zunCjLSFJWeSZUNCF64ttgMwQ-c28TRQbT3hwG86R_i3GaGJVXixWNu-NgoVBnNyHoJL5WvDlKIRkzApYc4W1L4T66tM_77dSg04v5T7Cn5IW52PPw7C5CwGmTZjOP7edBXDB1BtXqBeMgflO4OzbzOA # HTTP cookie previously sent by the server with Set-Cookie
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 # The user agent string of the user agent
+X-Client-Data: CIi2yQEIpLbJAQjEtskB # Chrome only, chrome installation status
+
+HTTP/1.1 302 Found # HTTP response, HTTP version 1.1, status code 302 found
+Cache-Control: private # Tells all caching mechanisms from server to client whether they may cache this object, in this case indicates that all or part of the response message is intended for a single user and must not be cached by a shared cache, such as a proxy server
+Content-Length: 230 # The length of the response body in octets is 230
+Content-Type: text/html; charset=UTF-8 # The MIME type of this content
+Date: Tue, 11 Oct 2016 14:26:33 GMT # The date and time that the message was sent
+Location: https://www.google.de/?gws_rd=ssl # a new resource has been created in this location
+Server: gws # Name of the server
+X-Frame-Options: SAMEORIGIN # Clickjacking protection: no rendering if origin mismatch
+X-XSS-Protection: 1; mode=block # Cross-site scripting (XSS) filter options
+
+Haoze Zhang
+11-10-2016
