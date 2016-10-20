@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zoo>
+	<animal species="elephant" weight="500">
+		<corral>
+			<location>entrance</location>
+		</corral>
+		<keeper>Sally Sunshine</keeper>
+		<keeper dayOff="Fr">Susan Sandbox</keeper>
+	</animal>
+	<animal species="giraffe" weight="250">
+		<corral>
+			<location>central park</location>
+		</corral>
+		<keeper>Sarah Strange</keeper>
+	</animal>
+	<animal species="dolphin" weight="80">
+		<aquarium>
+			<location>Aquahouse</location>
+		</aquarium>
+		<keeper dayOff="Mo">Steve Sportsman</keeper>
+	</animal>
+</zoo>

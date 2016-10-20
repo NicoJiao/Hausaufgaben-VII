@@ -1,0 +1,12 @@
+<!-- zoo.dtd -->
+<!ELEMENT zoo (animal+)>
+<!ELEMENT animal ((corral|aquarium), keeper*)>
+<!ATTLIST animal
+	species CDATA #REQUIRED
+	weight CDATA #REQUIRED>
+<!ELEMENT corral (location)>
+<!ELEMENT aquarium (location)>
+<!ELEMENT keeper (#PCDATA)>
+<!ATTLIST keeper
+	dayOff CDATA #IMPLIED>
+
