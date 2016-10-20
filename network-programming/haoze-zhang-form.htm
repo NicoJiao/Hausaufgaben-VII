@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<!--
+Exercise for internet progamming
+Author: Haoze Zhang
+Date:   20-10-2016
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+/* This is align setting for table cells, top left */
+	td {
+    	text-align: left;
+		vertical-align: top;
+	}
+</style>
+<title>Reservation</title>
+</head>
+<body>
+<main>
+<!--aside form-->
+<aside>
+	<form>
+		<!--Table is used to simplify formatting-->
+		<table style="border: 5px solid black;">
+		<caption><strong>Reservation</strong></caption>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td><input type="radio" name="gender" value="male" checked> Male<br>
+			<input type="radio" name="gender" value="female"> Female<br>
+			<input type="radio" name="gender" value="other"> Other<td>
+		</tr>
+		<tr>
+			<td>Continent</td>
+			<td>
+				<select name="continent">
+					<option value="please select">Please select</option>
+					<option value="africa">Africa</option>
+					<option value="asia">Asia</option>
+					<option value="europe">Europe</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Meals</td>
+			<td>
+				<input type="checkbox" name="breakfast" value="breakfast">Breakfast<br>
+				<input type="checkbox" name="lunch" value="lunch">Lunch<br>
+				<input type="checkbox" name="dinner" value="dinner">Dinner
+			</td>
+		</tr>
+		<tr>
+			<td>Remard</td>
+			<td>
+				<textarea name="message" rows="10" cols="30">...</textarea>
+			</td>
+		</tr>
+			<tr>
+				<td />
+				<td>
+					<button type="button">Cancel</button>
+					<button type="button">Submit</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<!--form ends-->
+</aside>
+</main>
+</body>
+</html>
