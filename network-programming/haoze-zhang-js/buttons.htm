@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<!--
+Author: Haoze Zhang
+Version: 22-10-2016
+-->
+
+<html id="page">
+<head>
+<meta charset="utf-8">
+<title>Buttons js</title>
+</head>
+<body>
+<main>
+	<form>
+		<!-- Four buttons -->
+		<button type="button" onmouseover="turnBlue();">Turn Blue!</button>
+		<button type="button" onmouseover="turnRed();">Turn Red!</button>
+		<button type="button" onmouseover="turnYellow();">Turn Yellow!</button>
+		<button type="button" onmouseover="turnWhite();">Turn White!</button>
+		<!-- JS here -->
+		<script type="text/javascript">
+			function turnBlue() {
+				document.getElementById("page").style.background = "blue";
+			}
+			function turnRed() {
+				document.getElementById("page").style.background = "red";
+			}
+			function turnYellow() {
+				document.getElementById("page").style.background = "yellow";
+			}
+			function turnWhite() {
+				document.getElementById("page").style.background = "white";
+			}
+		</script>
+	</form>
+	<pre style="background: black; color: white">Please do not play with it too much, bad for your eyes.</pre>
+</main>
+</body>
+</html>
