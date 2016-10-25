@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<!--
+Internet programming exercies
+Author: Haoze Zhang
+Version: 25-10-2016
+-->
+
+<html>
+<head>
+	<title>List with js</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<main>
+		<aside>
+			<ol style="color: blue" id="list">
+				<li>First</li>
+				<li>Second</li>
+				<li>Third</li>
+			</ol>
+			<form>
+				<button type="button" id="b1" onclick="addNewLiBot()">New li</button>
+				<button type="button" id="b2" onclick="changeColor('green')">Make me Green</button>
+				<pre>New list: </pre>
+				<input type="text" id="input">
+				<script type="text/javascript">
+					// Append new li, cannot immediatly repeat
+					previousInput = "";
+					function addNewLiBot() {
+						var ol = document.getElementById("list");
+						var li = document.createElement("li");
+						var input = document.getElementById("input").value;
+						if (input != previousInput) {
+							li.appendChild(document.createTextNode(input));
+							ol.appendChild(li);
+							previousInput = input;
+						} else {
+							alert("Change your input please!");
+						}
+					}
+					// Change color of first "number" element in the ol
+					function changeColor(color) {
+						number = 3;
+						var ol = document.getElementById("list");
+						for(var i=0; i < number; i++){
+							ol.children[i].style.color = color;
+						}
+					}
+				</script>
+			</form>
+		</aside>
+	</main>
+</body>
+</html>
