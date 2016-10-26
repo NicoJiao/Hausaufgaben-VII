@@ -6,6 +6,7 @@
 	weight CDATA #REQUIRED>
 <!ELEMENT corral (location)>
 <!ELEMENT aquarium (location)>
+<!ELEMENT location (#PCDATA)>
 <!ELEMENT keeper (#PCDATA)>
 <!ATTLIST keeper
 	dayOff CDATA #IMPLIED>
