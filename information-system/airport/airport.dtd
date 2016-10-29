@@ -1,2 +1,32 @@
 <!-- airport.dtd -->
-<
+<!ELEMENT Air (Airport*, Airline*, Employee*)>
+<!ELEMENT Airport (city, country)>
+<!ATTLIST Airport
+	token ID #REQUIRED>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT Airline (name, Flight*)>
+<!ATTLIST Airline
+	token ID #REQUIRED
+	homebase IDREF #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT Flight EMPTY>
+<!ATTLIST Flight
+	flightNo ID #REQUIRED
+	from IDREF #REQUIRED
+	to IDREF #REQUIRED>
+<!ELEMENT Employee (firstName, lastName, (FlightCrewMember | GroundCrewMember), Contract?)>
+<!ATTLIST Employee
+	ssn ID #REQUIRED>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT FlightCrewMember (flyingHours)>
+<!ELEMENT GroundCrewMember (phone)>
+<!ELEMENT flyingHours (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT Contract (dateOfSigning, fixedTerm)>
+<!ATTLIST Contract
+	airline IDREF #REQUIRED>
+<!ELEMENT dateOfSigning (#PCDATA)>
+<!ELEMENT fixedTerm (#PCDATA)>

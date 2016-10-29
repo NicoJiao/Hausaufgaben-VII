@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--airport.xml-->
+<!DOCTYPE Air SYSTEM "airport.dtd">
+<Air>
+	<Airport token="PVG">
+		<city>Shanghai</city>
+		<country>CN</country>
+	</Airport>
+
+	<Airport token="HAM">
+		<city>Hamburg</city>
+		<country>DE</country>
+	</Airport>
+
+	<Airport token="FRA">
+		<city>Frankfurt</city>
+		<country>DE</country>
+	</Airport>
+
+	<Airline token="LH" homebase="FRA">
+		<name>Lufthansa</name>
+		<Flight flightNo="LH7325" from="PVG" to="FRA" />
+		<Flight flightNo="LH001" from="HAM" to="FRA" />
+	</Airline>
+
+	<Airline token="CA" homebase="PVG">
+		<name>China Air</name>
+		<Flight flightNo="CA6229" from="PVG" to="FRA" />
+		<Flight flightNo="CA6228" from="FRA" to="PVG" />
+	</Airline>
+
+	<Employee ssn="CAF0001">
+		<firstName>A</firstName>
+		<lastName>Herren</lastName>
+		<FlightCrewMember>
+			<flyingHours>1500</flyingHours>
+		</FlightCrewMember>
+		<Contract airline="CA">
+			<dateOfSigning>10-10-2015</dateOfSigning>
+			<fixedTerm>true</fixedTerm>
+		</Contract>
+	</Employee>	
+
+	<Employee ssn="CAG0001">
+		<firstName>B</firstName>
+		<lastName>Herren</lastName>
+		<GroundCrewMember>
+			<phone>012355555555</phone>
+		</GroundCrewMember>
+		<Contract airline="CA">
+			<dateOfSigning>23-08-2014</dateOfSigning>
+			<fixedTerm>false</fixedTerm>
+		</Contract>
+	</Employee>	
+
+	<Employee ssn="LHF0001">
+		<firstName>C</firstName>
+		<lastName>Herren</lastName>
+		<FlightCrewMember>
+			<flyingHours>15330</flyingHours>
+		</FlightCrewMember>
+		<Contract airline="LH">
+			<dateOfSigning>20-03-2001</dateOfSigning>
+			<fixedTerm>true</fixedTerm>
+		</Contract>
+	</Employee>	
+
+	<Employee ssn="LHG0001">
+		<firstName>D</firstName>
+		<lastName>Herren</lastName>
+		<GroundCrewMember>
+			<phone>012355891402</phone>
+		</GroundCrewMember>
+		<Contract airline="LH">
+			<dateOfSigning>02-12-2011</dateOfSigning>
+			<fixedTerm>true</fixedTerm>
+		</Contract>
+
+	</Employee>	
+	<Employee ssn="NA0001">
+		<firstName>E</firstName>
+		<lastName>Herren</lastName>
+		<GroundCrewMember>
+			<phone>01235187039</phone>
+		</GroundCrewMember>
+	</Employee>		
+</Air>
