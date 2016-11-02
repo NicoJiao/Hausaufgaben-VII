@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--AviationDatabase.xml-->
+<!DOCTYPE Air SYSTEM "AviationDatabase.dtd">
+<AviationDatabase>
+<Airports>
+	<Airport token="PVG" city="Shanghai" country="CN" />
+	<Airport token="HAM" city="Hamburg" country="DE" />
+	<Airport token="FRA" city="Frankfurt" country="DE" />
+</Airports>
+<Airlines>
+	<Airline token="LH" homebase="FRA" name="Lufthansa">
+		<Flight flightNo="LH7325" from="PVG" to="FRA" />
+		<Flight flightNo="LH001" from="HAM" to="FRA" />
+	</Airline>
+
+	<Airline token="CA" homebase="PVG" name="China Air">
+		<Flight flightNo="CA6229" from="PVG" to="FRA" />
+		<Flight flightNo="CA6228" from="FRA" to="PVG" />
+	</Airline>
+</Airlines>
+<Employees>
+	<Employee ssn="CAF0001" firstName="A" lastName="Herren">
+		<FlightCrewMember>
+			<flyingHours>1500</flyingHours>
+		</FlightCrewMember>
+		<Contract airlineToken="CA" dateOfSigning="10-10-2015" fixedTerm="true" />
+	</Employee>	
+
+	<Employee ssn="CAG0001" firstName="B" lastName="Herren">
+		<GroundCrewMember>
+			<phone>012355555555</phone>
+		</GroundCrewMember>
+		<Contract airlineToken="CA" dateOfSigning="23-08-2014" fixedTerm="false" />
+	</Employee>	
+
+	<Employee ssn="LHF0001" firstName="B" lastName="Herren">
+		<FlightCrewMember>
+			<flyingHours>15330</flyingHours>
+		</FlightCrewMember>
+		<Contract airlineToken="LH" dateOfSigning="20-03-2001" fixedTerm="true" />
+	</Employee>	
+
+	<Employee ssn="LHG0001" firstName="D" lastName="Herren">
+		<GroundCrewMember>
+			<phone>012355891402</phone>
+		</GroundCrewMember>
+		<Contract airlineToken="LH" dateOfSigning="02-12-2011" fixedTerm="true" />
+	</Employee>	
+	<Employee ssn="NA0001" firstName="E" lastName="Herren">
+		<GroundCrewMember>
+			<phone>01235187039</phone>
+		</GroundCrewMember>
+	</Employee>
+</Employees>	
+</AviationDatabase>

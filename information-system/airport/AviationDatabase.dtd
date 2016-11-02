@@ -1,0 +1,28 @@
+<!ELEMENT AviationDatabase (Airports, Airlines, Employees)>
+<!ELEMENT Airports (Airport+)>
+<!ELEMENT Airlines (Airline+)>
+<!ELEMENT Employees (Employee+)>
+<!ELEMENT Airport EMPTY>
+<!ELEMENT Airline (Flight+)>
+<!ELEMENT Flight EMPTY>
+<!ELEMENT Employee ((FlightCrewMember | GroundCrewMember), Contract?)>
+<!ELEMENT FlightCrewMember (flyingHours)>
+<!ELEMENT GroundCrewMember (phone)>
+<!ELEMENT flyingHours (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT Contract EMPTY>
+<!ATTLIST Airport token ID #REQUIRED
+                            city CDATA #REQUIRED
+                            country CDATA #REQUIRED>
+<!ATTLIST Airline token ID #REQUIRED
+                            name CDATA #REQUIRED
+                            homebase IDREF #REQUIRED>
+<!ATTLIST Flight flightNo ID #REQUIRED
+                           from IDREF #REQUIRED
+                           to IDREF #REQUIRED>
+<!ATTLIST Employee ssn ID #REQUIRED
+                                  firstName CDATA #REQUIRED
+                                  lastName CDATA #REQUIRED>
+<!ATTLIST Contract dateOfSigning CDATA #REQUIRED
+                               fixedTerm (true | false) "true"
+                               airlineToken IDREF #REQUIRED>
