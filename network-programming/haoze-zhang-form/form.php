@@ -52,7 +52,7 @@ foreach ($words as $word) {
 		echo "$word <br>";
 	}
 }
-echo "</pre";
+echo "</pre>";
 
 /*
  * print student info 
