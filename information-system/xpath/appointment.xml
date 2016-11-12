@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE appointment SYSTEM "appointment.dtd">
+<!-- This document describes an appointment. -->
+<appointment>
+  <appointmentDetails>
+    <date>2011-10-27</date>
+    <time>8:15</time>
+    <duration>90</duration>
+    <location>1-1.11</location>
+  </appointmentDetails>
+  <participantList>
+    <person id="p1">
+      <firstName>Obi-Wan</firstName>
+      <lastName>Kenobi</lastName>
+      <phone type="office">987-654-323</phone>
+    </person>
+    <person id="p2">
+      <firstName>Han</firstName>
+      <lastName>Solo</lastName>
+      <phone type="home">333-444-555</phone>
+      <phone type="office">777-888-999</phone>
+    </person>
+    <person id="p3">
+      <firstName>R2</firstName>
+      <lastName>D2</lastName>
+      <phone type="home">321-342-654</phone>
+    </person>
+    <person id="p4">
+      <firstName>Luke</firstName>
+      <lastName>Skywalker</lastName>
+      <phone>234-098-231</phone>
+    </person>
+    <person id="p5">
+      <lastName>Chewy</lastName>
+    </person>
+  </participantList>
+</appointment>

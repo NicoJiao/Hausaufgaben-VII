@@ -1,0 +1,13 @@
+<!ELEMENT appointment (appointmentDetails, participantList)>
+<!ELEMENT appointmentDetails (date, time, duration, location)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT participantList (person*)>
+<!ELEMENT person (firstName?, lastName, phone*)>
+<!ATTLIST person id ID #REQUIRED>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ATTLIST phone type (office|home|mobile) "office">
