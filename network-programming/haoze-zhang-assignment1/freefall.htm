@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!-- 
+	Free fall calculator
+	Author: Haoze Zhang
+	Version: 09-11-2016
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Free fall calculator</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+  <h1>Internet Programming Assignment</h1>
+</header>
+<main>
+  <article>
+	<h2>The free fall calculator</h2>
+    <section>
+		<h3>What is a free fall?</h3>
+		<img class="flowRight" src="_images/falling-person.png">
+		<p>Literally, a free fall is what would happen when you release an object in the mid air and let it drop. I am too scared to cite any source, so feast your eyes with the correct definition at <a href="https://en.wikipedia.org/wiki/Free_fall" title="wikipedia free fall" target="_blank">wikipedia</a>.</p>
+    </section>
+	<section>
+		<h3>Something you might not know about falling</h3>
+		<p><strong>The ISS (International Space Station) is constantly FALLING!</strong> But since it travels so fast, that it falls not towards the ground but around the earth. It resembles the process when you through a piece of stone away from a clif at an extremely fast speed, it falls down and match the curve of the earth, so it never lands.</p>
+		<p><strong>Rain drops never kill people because they cannot accelerate too much!</strong> A falling object in the atmosphere cannot keep accelerating due to air resistance. It would stop accelerating at a certain speed known as <em>the terminal velocity</em> when air resistance is equilibrium to the gravitational force.</p>
+		<p><strong>I did not reference any external resources (even the pictures are drawn by myself), therefore no referencing is required in the context.</strong></p>
+	</section>
+	<section>
+		<h3>Simulate your free fall</h3>
+		<p>I programmed a free fall simulator that may do some calculations for you. Give one parameter and I will let you know how is the fall like.</p>
+		<form class="center">
+			<script src="_js/calculator.js" type="text/javascript"></script>
+			<p style="margin: 0 0 0.5em; border-bottom: 1px solid gray;">Your fall has 
+				<select id="parameters" onchange="changeUnit();">
+				<option value="h">falling height</option>
+				<option value="t">falling time</option>
+				<option value="v">final speed</option>
+				</select> of <input type="text" size="5" id="para"><span id="unit"></span></p>
+			<p>More options:</p>
+			<p><input id="G-chk" type="checkbox" onchange="showOptions();">Use custom G</p>
+			<div class="hidden" id="G-div">
+				<p>Gravitational acceleration: <input id="G" type="text" size="5" placeholder="9.8"> m/s^2</p>
+				<p class="notice">G = 9.8 m/s^2 is a good estimate and is always taken for calculation</p>
+			</div>
+			<p><input id="tv-chk" type="checkbox" onchange="showOptions();">Use terminal velocity</p>
+			<div class="hidden" id="tv-div">
+				<p>Terminal velocity: <input id="tv" type="text" size="5" placeholder="53"> m/s</p>
+				<p class="notice">The terminal velocity for a human is normally 53 m/s</p>
+			</div>
+			<p><input id="iv-chk" type="checkbox" onchange="showOptions();">Use initial velocity</p>
+			<div class="hidden" id="iv-div">
+			<p>Initial velocity: <input id="iv" type="text" size="5" placeholder="0"> m/s</p>
+			<p class="notice">The positive direction of initial velocity has the same direction as gravity</p>
+			</div>
+			<input type="button" value="Calculate" onclick="validate();">
+		</form>
+	</section>
+  </article>
+</main>
+<footer>
+	<p>Check out <a href="http://haoze.me" title="haoze.me" target="_blank">haoze.me</a> | follow me on <a href="https://de.linkedin.com/in/davidhaozezhang" title="Follow me on LinkedIn" target="_blank">LinkedIn</a> | License: <a href="https://opensource.org/licenses/MIT" title="MIT license" target="_blank">MIT</a></p>
+</footer>
+</body>
+</html>
