@@ -1,0 +1,22 @@
+﻿<employees>
+  <employee>
+    <firstName>R2</firstName>
+    <lastName>D2</lastName>
+    <hoursPerWeek>42</hoursPerWeek>
+  </employee>
+  <employee>
+    <firstName>Obi-Wan</firstName>
+    <lastName>Kenobi</lastName>
+    <hoursPerWeek>20</hoursPerWeek>
+  </employee>
+  <employee>
+    <firstName>Han</firstName>
+    <lastName>Solo</lastName>
+    <hoursPerWeek>38</hoursPerWeek>
+  </employee>
+  <employee>
+    <firstName>Luke</firstName>
+    <lastName>Skywalker</lastName>
+    <hoursPerWeek>48</hoursPerWeek>
+  </employee>
+</employees>
