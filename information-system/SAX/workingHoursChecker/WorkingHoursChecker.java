@@ -4,22 +4,36 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-
+/**
+ * @author Haoze Zhang
+ * @version 24-11-2016
+ * Class WorkingHoursChecker, extends DefaultHandler, provides call back functions
+ * to calculate: average working hour, worker's last name of whom works more than 40 h/wk
+ */
 public class WorkingHoursChecker extends DefaultHandler {
-
   int hoursTotals = 0;
   int numberOfEmps = 0;
-  Stack<String> lastNames = new Stack<String>();
   boolean takeHour = false;
   boolean takeName = false;
+  Stack<String> lastNames = new Stack<String>();
 
-  public void startDocument( ) throws SAXException {
+/* (non-Javadoc)
+* @see org.xml.sax.helpers.DefaultHandler#startDocument()
+* Print the introduction
+*/
+@Override
+public void startDocument( ) throws SAXException {
 	  System.out.println("Parsing Starts!");
 	  System.out.println("Calculating average working hour/week");
 	  System.out.println("And poor guys who work more than 40 hours/week");
   }
 
-  public void endDocument( ) throws SAXException {
+/* (non-Javadoc)
+* @see org.xml.sax.helpers.DefaultHandler#endDocument()
+* Print the results
+*/
+@Override
+public void endDocument( ) throws SAXException {
 	  if (numberOfEmps == 0) {
 		  System.out.println("No employee!");
 		  return;
@@ -33,7 +47,12 @@ public class WorkingHoursChecker extends DefaultHandler {
   }
 
 
-  public void startElement(String namespaceURI, String localName,
+/* (non-Javadoc)
+* @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
+* Check element type and get ready for taking in characters
+*/
+@Override
+public void startElement(String namespaceURI, String localName,
                            String qName, Attributes attr )
   throws SAXException {
 	  if (localName.equals("employee")) {
@@ -47,26 +66,34 @@ public class WorkingHoursChecker extends DefaultHandler {
 	  }
   }
 
-
-  public void endElement(String namespaceURI, String localName,
+/* (non-Javadoc)
+* @see org.xml.sax.helpers.DefaultHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
+* Left empty
+*/
+@Override
+public void endElement(String namespaceURI, String localName,
                          String qName ) throws SAXException {
-
+	// empty
   }
 
-
-  public void characters(char[] ch, int start, int length )
+/* (non-Javadoc)
+* @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
+* Take characters of either hour of work, or last name of the worker
+*/
+@Override
+public void characters(char[] ch, int start, int length )
   throws SAXException {
-	  if (takeHour) {
+	  if (takeHour) { // inner characters in hoursPerWeek element
 		  String hoursString = new String(ch, start, length);
 		  hoursString = hoursString.trim();
 		  int hours = new Integer(hoursString);
 		  hoursTotals += hours;
-		  if (hours <= 40) {
+		  if (hours <= 40) { // discard invalid (work no more than 40 hrs) name
 			  lastNames.pop();
 		  }
 		  takeHour = false;
 	  }
-	  if (takeName) {
+	  if (takeName) { // inner characters in lastName element
 		  String nameString = new String(ch, start, length);
 		  lastNames.add(nameString);
 		  takeName = false;
