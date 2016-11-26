@@ -1,0 +1,77 @@
+/*
+Author: Haoze
+Version: 25-11-2016
+*/
+
+html {
+	background: #333;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #DA4453;
+}
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 2.5% 2.5% 0;
+	background: white;
+	line-height: 2.0;          
+}
+h1 {
+	font: 1.6em Verdana, Geneva, sans-serif;
+	margin-bottom: .4em;
+	color: #444;
+}
+h2 {
+	font: 3.2em Georgia, "Times New Roman", Times, serif;
+	margin-bottom: .2em;
+}
+article h2 {
+	padding-bottom: .2em;
+	border-bottom: 1px solid gray;
+}
+h3 {
+	font-size: 1.2em;
+	margin: 1em 0 0;
+}
+p {
+	color: #333
+}
+footer {
+	border-top: 2px solid #333;
+	text-align: center;
+	font-size: .8em;
+	line-height: 4em;
+	margin-top: 1em;
+}
+a {
+    color: #DA4453;
+}
+span.bookname {
+	font-style: italic;
+	font-size: 1.2em;
+}
+span.cap {
+	font-size: 0.9em;
+	margin-right: 0.3em;
+	font-style: italic;
+}
+div.inline {
+	display: inline-block;
+	margin-right: 1.5em;
+}
+div.section {
+	margin-bottom: 0.5em;
+}
+div.bookResult {
+	margin: 0.5em 0 0.5em;
+    border-left: 6px solid #DA4453;
+    background-color: lightgray;
+}
