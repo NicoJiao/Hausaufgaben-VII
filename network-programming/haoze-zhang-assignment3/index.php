@@ -24,9 +24,14 @@ function validate(&$error, &$titleError, &$authorError) {
 	if (empty($_POST["title"])) { // title cannot be empty
 		$error .= "Title of the book is required.<br>";
 		$titleError = "color: red;";
-	} elseif (preg_match("/[<><>\/\\`~]/", $_POST["title"])) { // title contains no special chars
-		$error .= "Please do not use special characters (e.g. <>/\`~) for book title.<br>";
-		$titleError = "color: red;";
+	} else {
+		if (preg_match("/[<><>\/\\`~]/", $_POST["title"])) { // title contains no special chars
+			$error .= "Please do not use special characters (e.g. <>/\`~) for book title.<br>";
+			$titleError = "color: red;";
+		} if (preg_match("/^\s/", $_POST["title"])) { // start with visable char
+			$error .= "Book title should start with visible charaters.<br>";
+			$titleError = "color: red;";
+		}
 	}
 	if (empty($_POST["author"])) { // author cannot be empty
 		$error .= "Author is required<br>";
