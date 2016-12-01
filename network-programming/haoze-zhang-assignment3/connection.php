@@ -39,7 +39,10 @@ class Connector {
 	private function connect() {
 		$this->connection = new mysqli(self::host, self::uname, self::pw);
 		if ($this->connection->connect_error) { // cannot connect
-			$this->error .= "#Connection " . $this->connection->connect_error;
+			$this->error .= "#Connection " . $this->connection->connect_error . "<br>"
+			. "<span style='color:red;'>Make sure you have specified the right mysql username and password. "
+			. "You can modify the connection parameters in class Connection (connetion.php). "
+			. "Default: root@localhost (pw:root)</span><br>";
 		}
 		if ($this->connection->query(self::sqlCheckDb)->num_rows == 0) { // db not exsits
 			if ($this->connection->query(self::sqlCreateDb) == false) { // create db
