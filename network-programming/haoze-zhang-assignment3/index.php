@@ -1,7 +1,4 @@
 <?php
-// display error in debugging
-ini_set('display_errors', 1);
-
 require_once 'connection.php';
 $connector = new Connector();
 // error related variables
