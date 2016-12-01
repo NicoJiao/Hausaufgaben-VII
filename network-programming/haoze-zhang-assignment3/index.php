@@ -4,8 +4,53 @@ ini_set('display_errors', 1);
 
 require_once 'connection.php';
 $connector = new Connector();
+// error related variables
+$error = "";
+$titleError = $authorError = "";
 if (isset($_POST["submit"])) { // insert book into db if submitted
-	$connector->insert();
+	if (validate($error, $titleError, $authorError)) { // validate input
+		$connector->insert();
+	}
+}
+
+/**
+ * Validate form inputs
+ * @param string $error general error message
+ * @param string $titleError title style, red if error
+ * @param string $authorError author style, red if error
+ * @return boolean true if valid, false if error
+ */
+function validate(&$error, &$titleError, &$authorError) {
+	if (empty($_POST["title"])) { // title cannot be empty
+		$error .= "Title of the book is required.<br>";
+		$titleError = "color: red;";
+	} elseif (preg_match("/[<><>\/\\`~]/", $_POST["title"])) { // title contains no special chars
+		$error .= "Please do not use special characters (e.g. <>/\`~) for book title.<br>";
+		$titleError = "color: red;";
+	}
+	if (empty($_POST["author"])) { // author cannot be empty
+		$error .= "Author is required<br>";
+		$authorError = "color: red;";
+	} else {
+		if (preg_match("/[<>\/\\`~<>]/", $_POST["author"])) { // other validations
+			$error .= "Please do not use special characters (e.g. <>/\`~) for author name.<br>";
+			$authorError = "color: red;";
+		} if (preg_match("/[0-9]/", $_POST["author"])) {
+			$error .= "Please do not use numbers for author name<br>";
+			$authorError = "color: red;";
+		} if (!preg_match("/^.+ .+/", $_POST["author"])) {
+			$error .= "Author name has to contain at least a first and last name, separated by a space. E.g. Sheraz Azad.<br>";
+			$authorError = "color: red;";
+		} if (!preg_match("/^[A-Z].*( [A-Z].*)+$/", $_POST["author"])) {
+			$error .= "Every part of the author name should start with a leading capital letter. E.g. Sheraz Azad.<br>";
+			$authorError = "color: red;";
+		}
+	}
+	if (empty($error)) {
+		return true;
+	} else {
+		return false;
+	}
 }
 ?>
 
@@ -34,15 +79,19 @@ if (isset($_POST["submit"])) { // insert book into db if submitted
     		echo "<h3>Welcome</h3><p>Welcome to the book management system. You can upload your books into the system, and check all of the books at a glance.</p>";
     	} elseif (!empty($connector->getError())) {
     		echo "<h3>Database Error</h3><p>Error message: <br>".$connector->getError()."</p>";
+    	} elseif (!empty($error)) {
+    		echo "<h3>Book NOT added</h3><p>$error</p>";
     	} else {
     		echo '<h3>Book added</h3><p>You have successfully added the book <span class="bookname">'.$_POST['title']."</span> written by ".$_POST['author'].".</p>";
     	}
     	?>
     	<h3>Submit your book</h3>
-    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" onsubmit="return validate();">
+    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     	<div class="section">
-    		<div class="inline"><span class="cap">Title:</span><input type="text" name="title" id="title"></div>
-    		<div class="inline"><span class="cap">Author:</span><input type="text" name="author" id="author"></div>
+    		<div class="inline"><span class="cap" style="<?php echo $titleError?>">Title:</span>
+    		<input type="text" name="title" id="title" value="<?php if (!empty($error)) echo $_POST["title"]?>"></div>
+    		<div class="inline"><span class="cap" style="<?php echo $authorError?>">Author:</span>
+    		<input type="text" name="author" id="author" value="<?php if (!empty($error)) echo $_POST["author"]?>"></div>
     		<div class="inline">
     			<span class="cap">Rating:</span>
 	    		<select name="rating" >

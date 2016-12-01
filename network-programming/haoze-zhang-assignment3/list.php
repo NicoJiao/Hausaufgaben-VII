@@ -25,9 +25,11 @@ function printBooks($result) {
 		case "b_rating":
 			$criterion = "rating";
 			break;
-		case "b_time":
+		case "b_date":
 			$criterion = "time added";
 			break;
+		default:
+			$criterion = "unknown criterion";
 	}
 	switch ($_POST["order"]) {
 		case "ASC":
