@@ -56,7 +56,7 @@ class Connector {
 	}
 
 	/**
-	 * 
+	 * Disconnect database
 	 */
 	private function disconnect() {
 		$this->connection->close();
