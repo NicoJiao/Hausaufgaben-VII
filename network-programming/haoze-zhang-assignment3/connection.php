@@ -21,7 +21,7 @@ class Connector {
 	                        b_rating VARCHAR(5) NOT NULL,
 	                        b_status VARCHAR(10) NOT NULL,
 	                        b_comment VARCHAR(1000),
-	                        b_date TIMESTAMP
+	                        b_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 	                        )";
 	const sqlInsert = "INSERT INTO books (b_title, b_author, b_rating, b_status, b_comment) 
 	                   VAlUES (?, ?, ?, ?, ?)";
